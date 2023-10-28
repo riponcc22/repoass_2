@@ -1,4 +1,7 @@
 module.exports = 
 {
-    "URI":"mongodb://127.0.0.1:27017/businessContactList"
+ 
+   "URI":"mongodb+srv://ripon:Hd2tTcuHKLnhueNY@mongodbserver.0naknqc.mongodb.net/businessContactList"
+   
+
 }

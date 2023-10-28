@@ -18,13 +18,11 @@ let flash=require('connect-flash');
 
 let mongoose = require('mongoose');
 let DB = require('./db');
-let serverSelectionTimeoutMS = 500;
 
-mongoose.connect("mongodb://127.0.0.1:27017/businessContactList",{
-  serverSelectionTimeoutMS
-});
-
+//connect with database
+mongoose.connect(DB.URI);
 let mongoDB = mongoose.connection;
+//error check
 mongoDB.on('error', console.error.bind(console,'Error in Connection'));
 mongoDB.once('open', ()=> {
 console.log('Connected with your Databases');
