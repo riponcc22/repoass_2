@@ -1,0 +1,39 @@
+<!-- Contact page -->
+<%- include partials/header.ejs %>
+
+<%- include partials/main_nav.ejs %>
+
+        <div class="header1">
+        <h1>Welcome to <%= title %> page</h1>
+        
+        </div>
+       
+        <div class="contact">
+        <h2>Contact @me: </h2>
+        <h4>Email: ripon.du.chem@gmail.com</h4>
+        <h4>Phone: +1 647-853-254</h4>
+        <h4>Adress: 7 Crescent Place, East York, ON M4C 5L7</h4>
+
+       <br>
+
+        <form>
+                <fieldset>
+            <label for="fname">First name:</label><br>
+            <input type="text" id="fname" name="fname" ><br>
+            <label for="lname">Last name:</label><br>
+            <input type="text" id="lname" name="lname" ><br>
+            <label for="email">Email:</label><br>
+            <input id="txtEmail" name="txtEmail" type="email" placeholder="xyz@place.ca" required="required"></label><br>
+            <label for="tel">Phone</label><br>
+            <input type="tel" id="phoneN" name="phoneN" placeholder="012-345-6789" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required="required"><small>Format:012-345-6789</small><br>
+            <label>Message:</label><br>
+            <textarea cols="50" rows="2"></textarea><br>
+            <input type="submit" value="Submit">
+          </form> 
+          </fieldset>
+</div>
+ <hr>
+          <%- include partials/bottom_nav.ejs %>  
+
+          <%- include partials/footer.ejs %>
+            

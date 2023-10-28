@@ -1,0 +1,97 @@
+/* css goes here */
+
+.aboutPage{width:980px;
+    height:480px;
+    margin-left:auto;
+     margin-right:auto;
+     padding-left:10px;
+     padding-right:10px;
+   }
+
+    .header{
+        text-align:center;
+        height: 250px;
+        width:980px;
+        margin-left:auto;
+        margin-right:auto;
+        padding-bottom:none;
+        }
+        .header1{
+            text-align:center;
+            height: 50px;
+            width:980px;
+            margin-left:auto;
+            margin-right:auto;
+            padding-bottom:none;
+            }
+
+        .contact{width:980px;
+            height:550px;
+            margin-left:auto;
+             margin-right:auto;
+             padding-left:10px;
+             padding-right:10px;}
+
+            #service{width:980px;
+                height:250px;
+                margin-left:auto;
+                 margin-right:auto;
+                 padding-left:10px;
+                 padding-right:10px;
+                }
+
+                #project{width:980px;
+                    height:1250px;
+                    margin-left:auto;
+                     margin-right:auto;
+                     padding-left:10px;
+                     padding-right:10px;
+                    }
+
+            .homePage{width:980px;
+                height:250px;
+                margin-left:auto;
+                 margin-right:auto;
+                 padding-left:10px;
+                 padding-right:10px;}
+
+                #profilePic{
+
+                    height: 300px;
+                    border-radius: 50%;
+                    border: 5px solid rgb(1, 3, 140);
+                }
+                body{background-color:#52b3aa;
+                    color:black;
+                    font-family:Helvetica, Arial, Sans-serif;}
+
+                  .logo
+                    {
+                        height: 150px;
+                        width:980px;
+                        margin-left:auto;
+                        margin-right:auto;
+
+                            }
+
+                            .logo1
+                            {
+                                height: 40px;
+                                width:80px;
+                                margin-left:auto;
+                                margin-right:auto;
+        
+                                    }
+
+
+                            .container{
+                                width:980px;
+                                margin-left:auto;
+                                margin-right:auto;}
+
+                                #nav{height:30px;
+                                    width:980px;
+                                    margin-left:auto;
+                                    margin-right:auto;}
+
+                                    hr{border-style:solid;border-color:black;border-width:2px;}
