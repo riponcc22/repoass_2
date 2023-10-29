@@ -30,5 +30,4 @@ router.post('/login', indexCntroller.processLoginPage);
 
 /* Get to display the  login page  -create operation*/
 
-
 module.exports = router;

@@ -18,10 +18,13 @@ let flash=require('connect-flash');
 
 let mongoose = require('mongoose');
 let DB = require('./db');
+let serverSelectionTimeoutMS = 20000;
 
-//connect with database
-mongoose.connect(DB.URI);
+mongoose.connect(DB.URI,{
+  serverSelectionTimeoutMS
+});
 let mongoDB = mongoose.connection;
+
 //error check
 mongoDB.on('error', console.error.bind(console,'Error in Connection'));
 mongoDB.once('open', ()=> {
