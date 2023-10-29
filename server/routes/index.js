@@ -2,8 +2,8 @@ var express = require('express');
 var router = express.Router();
 let indexCntroller=require('../controllers/index');
 //let contactController=require('../controllers/contactlist');
-
-
+/* GET home page. */
+router.get('/', indexCntroller.displayHomePage);
 /* GET home page. */
 
 router.get('/home', indexCntroller.displayHomePage);
