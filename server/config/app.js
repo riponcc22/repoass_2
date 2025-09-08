@@ -12,8 +12,6 @@ let passportLocal=require('passport-local');
 let localStrategy=passportLocal.Strategy;
 let flash=require('connect-flash');
 
-
-
 //database setup
 
 let mongoose = require('mongoose');
@@ -28,8 +26,9 @@ let mongoDB = mongoose.connection;
 //error check
 mongoDB.on('error', console.error.bind(console,'Error in Connection'));
 mongoDB.once('open', ()=> {
-console.log('Connected with your Databases');
+console.log('Connected with my Databases');
 });
+//routers
 let indexRouter = require('../routes/index');
 let usersRouter = require('../routes/users');
 let contactRouter = require('../routes/contactlist');
@@ -65,6 +64,12 @@ app.use(passport.session());
 
 let userModel=require('../models/user');
 let User=userModel.User;
+
+//implement a user authentication strategy
+passport.use(User.createStrategy());
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);

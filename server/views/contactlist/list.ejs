@@ -2,52 +2,60 @@
 
 <%- include ../partials/main_nav.ejs %>
 
-<main class="container">
+<% const isLoggedIn = typeof displayName === 'string' && displayName; %>
+
+<main class="container" style="background-color: lightgray;">
     <div class="row">
         <div class="offset-md-1 col-md-10">
-            <h1><% title %></h1>
+            <h1><%= title %></h1>
 
-           <a href="/contactlist/add" class="btn btn-primary" role="button">
+            <% if(isLoggedIn) { %>
+            <br>
+            <div class="text-center">
+                <a href="/contactlist/add" class="btn btn-primary" role="button">
+                    <i class="fas fa-plus-circle"></i> Add New Contact
+                </a>
+            </div>
+            <% } %>
 
-            <i class="fas fa-plus-circle">Please add contact:</i>
-           </a>
-         
-        
             <br>
             <table class="table table-bordered table-striped table-hover">
                 <tr class="d-flex">
                     <th class="text-center col-2">Name</th>
                     <th class="text-center col-2">Contact Number</th>
                     <th class="text-center col-4">Email</th>
-                    <th class="text-center col-2">Edit Option</th>
-                    <th class="text-center col-2">Delete Option</th>
-
-
+                    <% if(isLoggedIn) { %>
+                        <th class="text-center col-2">Edit Option</th>
+                        <th class="text-center col-2">Delete Option</th>
+                    <% } %>
                 </tr>
-                <% for(let count=0; count <contactlist.length ; count++)  { %>
-                    <tr class="d-flex">
-                       <td class="text-center col-2"><%= contactlist[count].Name %></td> 
-                       <td class="text-center col-2"><%= contactlist[count].Contactnumber%></td> 
-                       <td class="text-center col-4"><%= contactlist[count].Email %></td>
-                       <td class="text-center col-2">
-                        <a href="/contactlist/edit/<%=contactlist[count]._id%>" class="btn btn-primary btn-sm">
-                            <i class="fas fa-pencil-alt">Edit</i>
-                        </a>
-                       </td>
-                    <td class="text-center col-2">
 
-                        <a href="/contactlist/delete/<%=contactlist[count]._id%>" class="btn btn-danger btn-sm">
-                            <i class="fas fa-trash-alt">Delete</i>
-                        </a>
-                    </td> 
-                    </tr>
-                <% } %>
+                <% contactlist.forEach(contact => { %>
+                <tr class="d-flex">
+                    <td class="text-center col-2"><%= contact.Name %></td>
+                    <td class="text-center col-2"><%= contact.Contactnumber %></td>
+                    <td class="text-center col-4"><%= contact.Email %></td>
+
+                    <% if(isLoggedIn) { %>
+                        <td class="text-center col-2">
+                            <a href="/contactlist/edit/<%= contact._id %>" class="btn btn-primary btn-sm">
+                                <i class="fas fa-pencil-alt"></i> Edit
+                            </a>
+                        </td>
+                        <td class="text-center col-2">
+                            <a href="/contactlist/delete/<%= contact._id %>" class="btn btn-danger btn-sm">
+                                <i class="fas fa-trash-alt"></i> Delete
+                            </a>
+                        </td>
+                    <% } %>
+                </tr>
+                <% }); %>
 
             </table>
         </div>
     </div>
 </main>
-  
+
 <%- include ../partials/bottom_nav.ejs %>  
 
 <%- include ../partials/footer.ejs %>

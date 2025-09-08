@@ -7,15 +7,16 @@
   
 
   <!-- Main Content of home-->
-  
-  <div class="header1">
+
+
+  <!-- <div class="header1">
     <h1>Welcome to <%= title %> page</h1>
   </div>
+
   <div class="homePage">
-  <a href="my-pic.jpg" target="_blank"><img id="profilePic" src="/Assets/images/my-pic.jpg" alt="My Photo"></a>
+  <a href="my-pic2.png" target="_blank"><img id="profilePic" src="/Assets/images/my-pic2.png" alt="My Photo"></a>
  
   <p>
-  
    Welcome to my MR IT solutions portfolio! Inovation is my inspiration. 
    Software technology is the backbone of modern digital society, powering everything from smartphones and computers to smart appliances and industrial machinery.
    The field of software technology is constantly evolving, with new programming languages, 
@@ -28,14 +29,76 @@
     <button type="button">>>>.....</button>
      </a>
 
+</div> -->
 
+<style>
+  .header1 {
+    background-color: #333; /* dark gray */
+    color: white;           /* text color */
+    padding: 20px;
+    text-align: center;
+    height: auto;
+  }
+
+  .homePage {
+    background-color: #f4f4f4; /* light gray */
+    padding: 20px;
+    border-radius: 10px;       /* rounded corners */
+    height: auto;
+  }
+
+  #profilePic {
+
+    width: 200px;
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    background-color: rgb(43, 62, 168);
+  }
+
+  button {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: #555;
+  }
+</style>
+
+<div class="header1">
+  <h1>Welcome to <%= title %> page</h1>
 </div>
+
+<div class="homePage">
+  <a href="my-pic2.png" target="_blank">
+    <img id="profilePic" src="/Assets/images/my-pic2.png" alt="My Photo">
+  </a>
  
+  <p>
+    Welcome to my MR IT solutions portfolio! Innovation is my inspiration. 
+    Software technology is the backbone of modern digital society, powering everything from smartphones and computers to smart appliances and industrial machinery.
+    The field of software technology is constantly evolving, with new programming languages, 
+    frameworks, and tools emerging regularly to meet the demands of the ever-changing technological landscape.
+  </p>
+
+  <h2>"To drive digital transformation through software excellence."</h2>
+
+  <p>Please see my details </p>
+  <a href="/about">
+    <button type="button">>>>.....</button>
+  </a>
+</div>
 
 
 <%- include partials/bottom_nav.ejs %>  
 
 <%- include partials/footer.ejs %>
+
 
 
 

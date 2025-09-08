@@ -12,7 +12,9 @@ module.exports.displayContactList=(req,res,next)=>{
         }
         else
         {
-            res.render('contactlist/list',{title:'Contact List', contactlist:ContactList});
+            res.render('contactlist/list',{title:'Contact List', contactlist:ContactList,
+            displayName: req.user ? req.user.displayName:''
+            });
         }
     });
 }

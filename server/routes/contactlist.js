@@ -1,41 +1,39 @@
-let express = require('express');
-let router = express.Router();
-let mongoose = require('mongoose');
-let passport=require('passport');
+const express = require('express');
+const router = express.Router();
+const passport = require('passport');
 
+const contactController = require('../controllers/contactlist');
 
-let contactController=require('../controllers/contactlist');
-
-/*function requireAuth(req,res,next){
-
-    if (!req.isAuthenticated())
-    
-    {
+// Authentication guard
+function requireAuth(req, res, next) {
+    if (!req.isAuthenticated()) {
         return res.redirect('/login');
-     }
-next();
+    }
+    next();
 }
-*/
 
-/* get route for productlist page-read operation*/
+// Display the Contact List (Read)
 router.get('/', contactController.displayContactList);
 
-/* get route for displaying add page-Create operation*/
-router.get('/add', contactController.displayAddPage);
+// Optional test route
+router.get('/api', (req, res) => {
+    res.send('Express RESTful API');
+});
 
-/* get route for processing add page-Create operation*/
-router.post('/add', contactController.processAddPage);
+// Display Add Contact Page (Create)
+router.get('/add', requireAuth, contactController.displayAddPage);
 
+// Process Add Contact Form (Create)
+router.post('/add', requireAuth, contactController.processAddPage);
 
-/* get route for displaying Edit page-Update operation*/
+// Display Edit Page (Update)
+router.get('/edit/:id', requireAuth, contactController.displayEditPage);
 
-router.get('/edit/:id', contactController.displayEditPage);
+// Process Edit Form (Update)
+router.post('/edit/:id', requireAuth, contactController.processEditPage);
 
-/* get route for processing Edit page-Update operation*/
-router.post('/edit/:id', contactController.processEditPage);
-
-/* get route to perform deletion-Delete operation*/
-
-router.get('/delete/:id', contactController.performDelete);
+// Delete Contact (Delete)
+router.get('/delete/:id', requireAuth, contactController.performDelete);
 
 module.exports = router;
+

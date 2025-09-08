@@ -19,7 +19,7 @@ router.get('/services', indexCntroller.displayServicePage);
 router.get('/contact', indexCntroller.displayContactPage);
 
 /* GET contact list page. */
-router.get('/Business Contact', indexCntroller.displayContactlistPage);
+//router.get('/Business Contact', indexCntroller.displayContactlistPage);
 
 /* Get to display the  login page  -create operation*/
 
@@ -28,6 +28,13 @@ router.get('/login', indexCntroller.displayLoginPage);
 /* PoST route for processing the login page  ---processing operation  */
 router.post('/login', indexCntroller.processLoginPage);
 
-/* Get to display the  login page  -create operation*/
+/* GET route for displaying Register Page */
+router.get('/register', indexCntroller.displayRegisterPage);
+
+/* POST route for processing Register Page -  */
+router.post('/register', indexCntroller.processRegisterPage );
+
+/* GET to perform UserLogout - */
+router.get('/logout', indexCntroller.performLogout );
 
 module.exports = router;
