@@ -3,10 +3,16 @@
 <%- include ../partials/main_nav.ejs %>
 
 <% const isLoggedIn = typeof displayName === 'string' && displayName; %>
-
-<main class="container" style="background-color: lightgray;">
+<style>
+.container {
+    width: 1050px;
+    margin: 0 auto; /* centers horizontally */
+    background-color: lightgray;
+}
+</style>
+<main class="container">
     <div class="row">
-        <div class="offset-md-1 col-md-10">
+        <div class="offset-md-0 col-md-12">
             <h1><%= title %></h1>
 
             <% if(isLoggedIn) { %>
@@ -19,11 +25,15 @@
             <% } %>
 
             <br>
+            <div class="table-responsive">
             <table class="table table-bordered table-striped table-hover">
                 <tr class="d-flex">
                     <th class="text-center col-2">Name</th>
                     <th class="text-center col-2">Contact Number</th>
                     <th class="text-center col-4">Email</th>
+                    <th class="text-center col-2">Address</th>
+                    <th class="text-center col-1">Age</th>
+                    <th class="text-center col-1">Sex</th>
                     <% if(isLoggedIn) { %>
                         <th class="text-center col-2">Edit Option</th>
                         <th class="text-center col-2">Delete Option</th>
@@ -35,6 +45,9 @@
                     <td class="text-center col-2"><%= contact.Name %></td>
                     <td class="text-center col-2"><%= contact.Contactnumber %></td>
                     <td class="text-center col-4"><%= contact.Email %></td>
+                    <td class="text-center col-2"><%= contact.Address %></td>
+                    <td class="text-center col-1"><%= contact.Age %></td>
+                    <td class="text-center col-1"><%= contact.Sex %></td>
 
                     <% if(isLoggedIn) { %>
                         <td class="text-center col-2">
@@ -50,6 +63,8 @@
                     <% } %>
                 </tr>
                 <% }); %>
+
+                </div>
 
             </table>
         </div>

@@ -28,6 +28,9 @@ module.exports.processAddPage=(req,res,next)=>{
     let newContact=Contacts({
         "Name":req.body.Name,
         "Contactnumber": req.body.Contactnumber,
+        "Address": req.body.Address,
+        "Age": req.body.Age,
+        "Sex": req.body.Sex,
         "Email": req.body.Email
 
     });
@@ -68,6 +71,9 @@ module.exports.processEditPage=(req,res,next)=>{
            "_id":id,
            "Name":req.body.Name,
            "Contactnumber": req.body.Contactnumber,
+              "Address": req.body.Address,
+                "Age": req.body.Age,
+                "Sex": req.body.Sex,
            "Email": req.body.Email
     });
    Contacts.updateOne({_id:id}, updateContact,(err)=>{

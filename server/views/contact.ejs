@@ -2,6 +2,42 @@
 <%- include partials/header.ejs %>
 
 <%- include partials/main_nav.ejs %>
+
+<style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    label {
+      font-weight: bold;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      box-sizing: border-box;
+    }
+    .submit-btn {
+      margin-top: 20px;
+    }
+    .container {
+  padding: 20px;
+  border-radius: 8px;
+  width: auto;
+  height: 1050px;
+}
+@media (max-width: 600px) {
+  input, textarea {
+    width: 100%;
+    font-size: 16px;
+  }
+}
+  </style>
+
+
 <main class="container" style="background-color: lightgray;">
         <div class="header1">
         <h1>Welcome to <%= title %> page</h1>
@@ -16,8 +52,8 @@
 
        <br>
 
-        <form>
-                <fieldset>
+        <!-- <form>
+        <fieldset>
             <label for="fname">First name:</label><br>
             <input type="text" id="fname" name="fname" ><br>
             <label for="lname">Last name:</label><br>
@@ -30,8 +66,48 @@
             <textarea cols="50" rows="2"></textarea><br>
             <input type="submit" value="Submit">
           </form> 
-          </fieldset>
+          </fieldset> -->
+
+        <form action="https://formspree.io/f/xandvjrz" method="POST">
+        <fieldset>
+        <legend>Contact Us</legend>
+
+        <div class="form-group">
+                <label for="fname">First Name:</label>
+                <input type="text" id="fname" name="fname" required>
+        </div>
+
+        <div class="form-group">
+                <label for="lname">Last Name:</label>
+                <input type="text" id="lname" name="lname" required>
+        </div>
+
+        <div class="form-group">
+                <label for="txtEmail">Email:</label>
+                <input type="email" id="txtEmail" name="txtEmail" placeholder="xyz@place.ca" required>
+        </div>
+
+        <div class="form-group">
+                <label for="phoneN">Phone:</label>
+                <input type="tel" id="phoneN" name="phoneN" placeholder="012-345-6789"
+                pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+                <small>Format: 012-345-6789</small>
+        </div>
+
+        <div class="form-group">
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" cols="50" required></textarea>
+        </div>
+
+        <div class="form-group submit-btn">
+                <input type="submit" value="Submit">
+        </div>
+
+        </fieldset>
+        </form> 
 </div>
+
+</main>
  <hr>
           <%- include partials/bottom_nav.ejs %>  
 
